@@ -1,0 +1,1 @@
+export const server = process.env.NODE_ENV === "production" ? 'https://test.com' : 'http://localhost:3000';
