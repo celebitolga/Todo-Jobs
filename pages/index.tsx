@@ -21,7 +21,7 @@ interface Props {
   prioritySelectOptions: Array<IPrioritySelect>;
 }
 
-const Home: NextPage<Props> = ({ prioritySelectOptions }) => {
+const Home: NextPage<Props> = ({ prioritySelectOptions = [] }) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
