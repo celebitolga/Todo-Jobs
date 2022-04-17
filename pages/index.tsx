@@ -42,8 +42,9 @@ const Home: NextPage<Props> = ({ prioritySelectOptions }) => {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${server}/api/prioritySelectOptions`);
-  const prioritySelectOptions = await res.json();
+  const prioritySelectOptions = await fetch(`${server}/api/prioritySelectOptions`)
+  .then((res) => res.json())
+  .catch(() => []);
 
   return {
     props: {
