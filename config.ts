@@ -1,1 +1,1 @@
-export const server = process.env.NODE_ENV === "production" ? 'https://test.com' : 'http://localhost:3000';
+export const server = process.env.NODE_ENV === "production" ? 'https://todo-jobs.vercel.app' : 'http://localhost:3000';
