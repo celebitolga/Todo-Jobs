@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 // styles
 import * as S from "./styles.styled";
@@ -58,6 +58,12 @@ function EditTodo({ job, setJob }: Props): JSX.Element {
     }
   };
 
+  const handleKeyDown = useCallback( (e: React.KeyboardEvent<HTMLElement>): void => {
+    if (e.key === "Escape") {
+      setJob(undefined);
+    }
+  },[setJob]);
+
   const renderOptions = (options: Array<IPrioritySelect>): JSX.Element[] => {
     return options.map((option: IPrioritySelect) => (
       <option key={option.value} value={option.value}>
@@ -68,11 +74,13 @@ function EditTodo({ job, setJob }: Props): JSX.Element {
 
   useEffect(() => {
     document.body.style.overflowY = "hidden";
+    document.addEventListener("keydown", (e: any) => handleKeyDown(e));
 
     return () => {
       document.body.style.overflowY = "auto";
+      document.addEventListener("keydown", (e: any) => handleKeyDown(e), false);
     };
-  }, []);
+  }, [handleKeyDown]);
 
   return (
     <S.Holder onClick={handleOutsideClick}>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 // styles
 import * as S from "./styles.styled";
@@ -47,13 +47,21 @@ function DeleteTodo({ job, setJob }: Props): JSX.Element {
     }
   };
 
+  const handleKeyDown = useCallback( (e: React.KeyboardEvent<HTMLElement>): void => {
+    if (e.key === "Escape") {
+      setJob(undefined);
+    }
+  },[setJob]);
+
   useEffect(() => {
     document.body.style.overflowY = "hidden";
+    document.addEventListener("keydown", (e: any) => handleKeyDown(e));
 
     return () => {
       document.body.style.overflowY = "auto";
+      document.removeEventListener("keydown", (e: any) => handleKeyDown(e));
     };
-  }, []);
+  }, [handleKeyDown]);
 
   return (
     <S.Holder onClick={handleOutsideClick}>
