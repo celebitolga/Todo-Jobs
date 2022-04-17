@@ -8,7 +8,7 @@ function Footer(): JSX.Element {
   return (
     <S.Footer>
       <S.Wrapper>
-        <S.Link href="#">
+        <S.Link href="https://github.com/celebitolga/Todo-Jobs" target="_blank">
           <S.Icon>
             <AiFillGithub />
           </S.Icon>
