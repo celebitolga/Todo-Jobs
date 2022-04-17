@@ -10,7 +10,7 @@ const newTodoValidation = yup.object({
       "Only letters and numbers are allowed"
     )
     .required("Name is required"),
-  priority: yup.string().required("Priority is required"),
+  priority: yup.number().min(0, 'Priority is required').required("Priority is required"),
 });
 
 export default newTodoValidation;
