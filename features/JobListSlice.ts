@@ -8,7 +8,7 @@ import { IJob } from "../components/Todo/model";
 import { getItemFromLS, saveItemToLS } from "../utils/localStorage";
 
 interface IJobListState {
-  value: IJob[];
+  value: Array<IJob>;
 }
 
 const SLICE_NAME = "jobList";

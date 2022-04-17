@@ -1,6 +1,6 @@
 import { IPrioritySelect } from "../components/Todo/model";
 
-export const prioritySelectOptions: IPrioritySelect[] = [
+export const prioritySelectOptions: Array<IPrioritySelect> = [
   {
     value: 1,
     label: "Urgent",

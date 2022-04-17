@@ -5,7 +5,7 @@ import type { RootState } from "../app/store";
 import { IPrioritySelect } from "../components/Todo/model";
 
 interface IPriorityOptions {
-  value: IPrioritySelect[];
+  value: Array<IPrioritySelect>;
 }
 
 const SLICE_NAME = "priorityOptions";
@@ -18,7 +18,7 @@ export const priorityOptionsSlice = createSlice({
   name: SLICE_NAME,
   initialState,
   reducers: {
-    setPriorityOptions: (state, action: PayloadAction<IPrioritySelect[]>) => {
+    setPriorityOptions: (state, action: PayloadAction<Array<IPrioritySelect>>) => {
       state.value = action.payload;
     },
   },

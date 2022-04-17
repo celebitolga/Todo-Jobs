@@ -7,7 +7,7 @@ import { IPrioritySelect } from "./../../../components/Todo/model";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<IPrioritySelect[]>
+  res: NextApiResponse<Array<IPrioritySelect>>
 ) {
   res.status(200).json(prioritySelectOptions);
 }

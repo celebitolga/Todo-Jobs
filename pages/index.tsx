@@ -18,7 +18,7 @@ import Todo from "../components/Todo";
 import { IPrioritySelect } from "../components/Todo/model";
 
 interface Props {
-  prioritySelectOptions: IPrioritySelect[];
+  prioritySelectOptions: Array<IPrioritySelect>;
 }
 
 const Home: NextPage<Props> = ({ prioritySelectOptions }) => {

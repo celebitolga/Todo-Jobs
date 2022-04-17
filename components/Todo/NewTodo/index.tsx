@@ -27,7 +27,7 @@ import Label from "../../Label";
 
 function NewTodo(): JSX.Element {
   const dispatch = useAppDispatch();
-  const priorityOptions: IPrioritySelect[] = useAppSelector(
+  const priorityOptions: Array<IPrioritySelect> = useAppSelector(
     selectPriorityOptions
   );
 

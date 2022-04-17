@@ -41,8 +41,8 @@ const INITIAL_SORT_PRIORITY: IPrioritySelect = {
 };
 
 function TodoList(): JSX.Element {
-  const jobList: IJob[] = useAppSelector(selectJobList);
-  const priorityOptions: IPrioritySelect[] = useAppSelector(
+  const jobList: Array<IJob> = useAppSelector(selectJobList);
+  const priorityOptions: Array<IPrioritySelect> = useAppSelector(
     selectPriorityOptions
   );
 
@@ -108,8 +108,8 @@ function TodoList(): JSX.Element {
     [prioritySortMode]
   );
 
-  const filteredJobs = useMemo((): IJob[] => {
-    let _jobList: IJob[] = JSON.parse(JSON.stringify(jobList));
+  const filteredJobs = useMemo((): Array<IJob> => {
+    let _jobList: Array<IJob> = JSON.parse(JSON.stringify(jobList));
 
     if (sortPriority !== INITIAL_SORT_PRIORITY.value) {
       _jobList = _jobList.filter(
