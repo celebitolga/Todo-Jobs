@@ -53,9 +53,7 @@ function TodoList(): JSX.Element {
 
   const [nameSortMode, setnameSortMode] = useState<boolean>(true);
   const [prioritySortMode, setprioritySortMode] = useState<boolean>(true);
-  const [lastSelected, setLastSelected] = useState<string>(
-    SORT_MODE_TYPES.priority
-  );
+  const [lastSelected, setLastSelected] = useState<string>(SORT_MODE_TYPES.priority);
 
   const [editJobObj, setEditJobObj] = useState<IJob>();
   const [deleteJobObj, setDeleteJobObj] = useState<IJob>();
@@ -118,19 +116,16 @@ function TodoList(): JSX.Element {
           job.name.toLowerCase().includes(searchText.toLowerCase())
       );
     } else {
-      _jobList =
-        searchText === ""
-          ? _jobList
-          : _jobList.filter((job) =>
-              job.name.toLowerCase().includes(searchText.toLowerCase())
-            );
+      _jobList = _jobList.filter((job) =>
+        job.name.toLowerCase().includes(searchText.toLowerCase())
+      );
     }
 
     if (lastSelected === "priority") {
+      // Sort by priority
       return _jobList.sort(sortByPriority);
     } else {
       // Sort By Name
-
       return _jobList.sort(sortByName);
     }
   }, [
