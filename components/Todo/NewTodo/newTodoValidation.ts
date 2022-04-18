@@ -6,7 +6,7 @@ const newTodoValidation = yup.object({
     .trim()
     .max(255)
     .matches(
-      /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/i,
+      /^[A-Za-z0-9 wığüşöçĞÜŞÖÇİ_]*[A-Za-z0-9 wığüşöçĞÜŞÖÇİ][A-Za-z0-9 wığüşöçĞÜŞÖÇİ_]*$/i,
       "Only letters and numbers are allowed"
     )
     .required("Name is required"),
