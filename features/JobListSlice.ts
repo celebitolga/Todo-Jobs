@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../app/store";
 
 // model
-import { IJob } from "../components/Todo/model";
+import { IJob } from "../types/types";
 
 // LocalStorage functions
 import { getItemFromLS, saveItemToLS } from "../utils/localStorage";

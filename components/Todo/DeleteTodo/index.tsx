@@ -16,7 +16,7 @@ import { RiErrorWarningLine } from "react-icons/ri";
 import Button from "../../Button";
 
 // Types
-import { IJob } from "../model";
+import { IJob } from "../../../types/types";
 
 interface Props {
   job: IJob;

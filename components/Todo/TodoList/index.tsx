@@ -20,7 +20,7 @@ import {
 } from "react-icons/fi";
 
 // types
-import { IJob, IPrioritySelect } from "../model";
+import { IJob, IPrioritySelect } from "../../../types/types";
 
 // components
 import Input from "../../Input";

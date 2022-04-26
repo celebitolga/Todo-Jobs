@@ -17,7 +17,7 @@ import Select from "../../Select";
 import Button from "../../Button";
 
 // Types
-import { IJob, IPrioritySelect } from "../model";
+import { IJob, IPrioritySelect } from "../../../types/types";
 
 interface Props {
   job: IJob;

@@ -17,7 +17,7 @@ import * as S from "./styles.styled";
 import newTodoValidation from "./newTodoValidation";
 
 // types
-import { IPrioritySelect } from "../model";
+import { IPrioritySelect } from "../../../types/types";
 
 // components
 import Button from "../../Button";

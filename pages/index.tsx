@@ -15,7 +15,7 @@ import { server } from "../config";
 import Todo from "../components/Todo";
 
 // modal
-import { IPrioritySelect } from "../components/Todo/model";
+import { IPrioritySelect } from "../types/types";
 
 interface Props {
   prioritySelectOptions: Array<IPrioritySelect>;

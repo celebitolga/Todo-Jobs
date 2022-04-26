@@ -1,4 +1,4 @@
-import { IPrioritySelect } from "../components/Todo/model";
+import { IPrioritySelect } from "../types/types";
 
 export const prioritySelectOptions: Array<IPrioritySelect> = [
   {

@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 // data
 import { prioritySelectOptions } from "../../../data/prioritySelectOptions";
-import { IPrioritySelect } from "./../../../components/Todo/model";
+import { IPrioritySelect } from "./../../../types/types";
 
 export default function handler(
   req: NextApiRequest,
