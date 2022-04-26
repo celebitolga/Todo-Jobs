@@ -2,12 +2,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 // data
-import { prioritySelectOptions } from "../../../data/prioritySelectOptions";
-import { IPrioritySelect } from "./../../../types/types";
+import prioritySelectOptions from "../../../data/prioritySelectOptions.json";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Array<IPrioritySelect>>
+  res: NextApiResponse
 ) {
   res.status(200).json(prioritySelectOptions);
 }
