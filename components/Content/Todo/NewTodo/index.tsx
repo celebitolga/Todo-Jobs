@@ -1,11 +1,11 @@
 import { useFormik } from "formik";
 
 // Redux hooks
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 
 // Slicer functions
-import { createNewJob } from "../../../features/JobListSlice";
-import { selectPriorityOptions } from "../../../features/PriorityOptionsSlice";
+import { createNewJob } from "@Features/JobListSlice";
+import { selectPriorityOptions } from "@Features/PriorityOptionsSlice";
 
 // icons
 import { FiPlus } from "react-icons/fi";
@@ -16,14 +16,8 @@ import * as S from "./styles.styled";
 // validation
 import newTodoValidation from "./newTodoValidation";
 
-// types
-import { IPrioritySelect } from "../../../types/types";
-
 // components
-import Button from "../../Button";
-import Input from "../../Input";
-import Select from "../../Select";
-import Label from "../../Label";
+import { Label, Input, Select, Button } from '@Components';
 
 function NewTodo(): JSX.Element {
   const dispatch = useAppDispatch();

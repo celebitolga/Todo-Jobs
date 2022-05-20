@@ -4,19 +4,16 @@ import { useState, useEffect, useCallback } from "react";
 import * as S from "./styles.styled";
 
 // Redux hooks
-import { useAppDispatch } from "../../../app/hooks";
+import { useAppDispatch } from "../../../../app/hooks";
 
 // Slicer functions
-import { deleteJob } from "../../../features/JobListSlice";
+import { deleteJob } from "@Features/JobListSlice";
 
 // icons
 import { RiErrorWarningLine } from "react-icons/ri";
 
 // Components
-import Button from "../../Button";
-
-// Types
-import { IJob } from "../../../types/types";
+import { Button } from "@Components";
 
 interface Props {
   job: IJob;
@@ -47,11 +44,14 @@ function DeleteTodo({ job, setJob }: Props): JSX.Element {
     }
   };
 
-  const handleKeyDown = useCallback( (e: React.KeyboardEvent<HTMLElement>): void => {
-    if (e.key === "Escape") {
-      setJob(undefined);
-    }
-  },[setJob]);
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLElement>): void => {
+      if (e.key === "Escape") {
+        setJob(undefined);
+      }
+    },
+    [setJob]
+  );
 
   useEffect(() => {
     document.body.style.overflowY = "hidden";

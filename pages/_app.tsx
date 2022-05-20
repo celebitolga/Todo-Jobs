@@ -5,8 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "../app/store";
 
 // components
-import Layout from "../components/Layout";
-import Theme from "../utils/Theme";
+import { Layout, Theme } from "@Components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

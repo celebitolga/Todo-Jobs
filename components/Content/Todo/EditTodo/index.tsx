@@ -4,20 +4,14 @@ import { useState, useEffect, useCallback } from "react";
 import * as S from "./styles.styled";
 
 // Redux hooks
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 
 // Slicer functions
-import { editJob } from "../../../features/JobListSlice";
-import { selectPriorityOptions } from "../../../features/PriorityOptionsSlice";
+import { editJob } from "@Features/JobListSlice";
+import { selectPriorityOptions } from "@Features/PriorityOptionsSlice";
 
 // Components
-import Label from "../../Label";
-import Input from "../../Input";
-import Select from "../../Select";
-import Button from "../../Button";
-
-// Types
-import { IJob, IPrioritySelect } from "../../../types/types";
+import { Label, Input, Select, Button } from '@Components';
 
 interface Props {
   job: IJob;

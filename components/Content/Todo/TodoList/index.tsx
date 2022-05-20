@@ -1,14 +1,14 @@
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useRef } from "react";
 
 // styles
 import * as S from "./styles.styled";
 
 // Redux hooks
-import { useAppSelector } from "../../../app/hooks";
+import { useAppSelector } from "../../../../app/hooks";
 
 // Slicer functions
-import { selectJobList } from "../../../features/JobListSlice";
-import { selectPriorityOptions } from "../../../features/PriorityOptionsSlice";
+import { selectJobList } from "@Features/JobListSlice";
+import { selectPriorityOptions } from "@Features/PriorityOptionsSlice";
 
 // icons
 import {
@@ -19,14 +19,8 @@ import {
   FiArrowUp,
 } from "react-icons/fi";
 
-// types
-import { IJob, IPrioritySelect } from "../../../types/types";
-
 // components
-import Input from "../../Input";
-import Select from "../../Select";
-import Button from "../../Button";
-import Badge from "../../Badge";
+import { Input, Select, Button, Badge } from '@Components';
 import EditTodo from "../EditTodo";
 import DeleteTodo from "../DeleteTodo";
 

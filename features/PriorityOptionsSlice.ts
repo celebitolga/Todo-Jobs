@@ -1,9 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../app/store";
 
-// model
-import { IPrioritySelect } from "../types/types";
-
 interface IPriorityOptions {
   value: Array<IPrioritySelect>;
 }

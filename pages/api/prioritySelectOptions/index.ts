@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 // data
-import prioritySelectOptions from "../../../data/prioritySelectOptions.json";
+import prioritySelectOptions from "@Data/prioritySelectOptions.json";
 
 export default function handler(
   req: NextApiRequest,

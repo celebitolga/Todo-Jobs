@@ -1,10 +1,10 @@
-export interface IJob {
+interface IJob {
   id: number;
   name: string;
   priority: number;
 }
 
-export interface IPrioritySelect {
+interface IPrioritySelect {
   value: string | number;
   label: string;
 }

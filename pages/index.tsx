@@ -6,16 +6,13 @@ import { useEffect } from "react";
 import { useAppDispatch } from "../app/hooks";
 
 // Slicer functions
-import { setPriorityOptions } from "../features/PriorityOptionsSlice";
+import { setPriorityOptions } from "@Features/PriorityOptionsSlice";
 
 // config (Server URL)
 import { server } from "../config";
 
 // components
-import Todo from "../components/Todo";
-
-// modal
-import { IPrioritySelect } from "../types/types";
+import { Todo } from "@Components";
 
 interface Props {
   prioritySelectOptions: Array<IPrioritySelect>;

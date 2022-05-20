@@ -1,8 +1,7 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 
 // slicers
-import JobListSlice from "../features/JobListSlice";
-import PriorityOptionsSlice from "../features/PriorityOptionsSlice";
+import { JobListSlice, PriorityOptionsSlice } from "@Features/index";
 
 export const store = configureStore({
   reducer: {

@@ -1,6 +1,7 @@
 // styles
 import * as S from "./styles.styled";
 
+// Props
 interface Props {
   variant?: "urgent" | "regular" | "trivial" | string;
   children?: React.ReactNode;

@@ -2,8 +2,7 @@
 import { Container } from "./styles.styled";
 
 // components
-import Header from "../Header/index";
-import Footer from "../Footer/index";
+import { Header, Footer } from '@Components';
 
 interface Props {
   children: React.ReactNode;

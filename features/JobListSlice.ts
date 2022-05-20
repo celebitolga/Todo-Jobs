@@ -1,11 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../app/store";
 
-// model
-import { IJob } from "../types/types";
-
 // LocalStorage functions
-import { getItemFromLS, saveItemToLS } from "../utils/localStorage";
+import { getItemFromLS, saveItemToLS } from "@Utils";
 
 interface IJobListState {
   value: Array<IJob>;
