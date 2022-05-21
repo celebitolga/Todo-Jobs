@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useAppDispatch } from "../app/hooks";
 
 // Slicer functions
-import { setPriorityOptions } from "@Features/PriorityOptionsSlice";
+import { setPriorityOptions } from "@Features/priorityOptionsSlice";
 
 // config (Server URL)
 import { server } from "../config";

@@ -7,8 +7,8 @@ import * as S from "./styles.styled";
 import { useAppSelector } from "../../../../app/hooks";
 
 // Slicer functions
-import { useJobList } from "@Features/JobListSlice";
-import { usePriorityOptions } from "@Features/PriorityOptionsSlice";
+import { selectJobList } from "@Features/jobListSlice";
+import { selectPriorityOptions } from "@Features/priorityOptionsSlice";
 
 // icons
 import {
@@ -35,9 +35,9 @@ const INITIAL_SORT_PRIORITY: IPrioritySelect = {
 };
 
 function TodoList(): JSX.Element {
-  const { jobList } = useAppSelector(useJobList);
+  const { jobList } = useAppSelector(selectJobList);
   const { priorityOptions } = useAppSelector(
-    usePriorityOptions
+    selectPriorityOptions
   );
 
   const [sortPriority, setSortPriority] = useState<string | number>(

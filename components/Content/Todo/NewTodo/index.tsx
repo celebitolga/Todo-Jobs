@@ -4,8 +4,8 @@ import { useFormik } from "formik";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 
 // Slicer functions
-import { createNewJob } from "@Features/JobListSlice";
-import { usePriorityOptions } from "@Features/PriorityOptionsSlice";
+import { createNewJob } from "@Features/jobListSlice";
+import { selectPriorityOptions } from "@Features/priorityOptionsSlice";
 
 // icons
 import { FiPlus } from "react-icons/fi";
@@ -22,7 +22,7 @@ import { Label, Input, Select, Button } from '@Components';
 function NewTodo(): JSX.Element {
   const dispatch = useAppDispatch();
   const { priorityOptions } = useAppSelector(
-    usePriorityOptions
+    selectPriorityOptions
   );
 
   const onSubmitNewTodo = ({ name, priority }: { name: string; priority: string | number; }): void => {

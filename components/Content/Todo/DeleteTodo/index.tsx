@@ -7,7 +7,7 @@ import * as S from "./styles.styled";
 import { useAppDispatch } from "../../../../app/hooks";
 
 // Slicer functions
-import { deleteJob } from "@Features/JobListSlice";
+import { deleteJob } from "@Features/jobListSlice";
 
 // icons
 import { RiErrorWarningLine } from "react-icons/ri";
