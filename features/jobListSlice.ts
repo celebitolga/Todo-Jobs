@@ -52,6 +52,7 @@ export const jobListSlice = createSlice({
 
 export const { createNewJob, editJob, deleteJob } = jobListSlice.actions;
 
-export const selectJobList = (state: RootState) => state[SLICE_NAME];
+export const selectJobList = (state: RootState): Array<IJob> =>
+  state[SLICE_NAME].jobList;
 
 export default jobListSlice.reducer;

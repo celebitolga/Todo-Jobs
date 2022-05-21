@@ -17,15 +17,19 @@ import * as S from "./styles.styled";
 import newTodoValidation from "./newTodoValidation";
 
 // components
-import { Label, Input, Select, Button } from '@Components';
+import { Label, Input, Select, Button } from "@Components";
 
 function NewTodo(): JSX.Element {
   const dispatch = useAppDispatch();
-  const { priorityOptions } = useAppSelector(
-    selectPriorityOptions
-  );
+  const priorityOptions = useAppSelector(selectPriorityOptions);
 
-  const onSubmitNewTodo = ({ name, priority }: { name: string; priority: string | number; }): void => {
+  const onSubmitNewTodo = ({
+    name,
+    priority,
+  }: {
+    name: string;
+    priority: string | number;
+  }): void => {
     dispatch(
       createNewJob({
         id: Date.now(),
@@ -33,7 +37,7 @@ function NewTodo(): JSX.Element {
         priority: Number(priority),
       })
     );
-  }
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -54,7 +58,7 @@ function NewTodo(): JSX.Element {
         {option.label}
       </option>
     ));
-  }
+  };
 
   return (
     <S.Wrapper>
@@ -95,10 +99,13 @@ function NewTodo(): JSX.Element {
             error={
               formik.errors.priority && formik.touched.priority ? true : false
             }
-            options={[{
-              value: "",
-              label: "Choose",
-            },...priorityOptions]}
+            options={[
+              {
+                value: "",
+                label: "Choose",
+              },
+              ...priorityOptions,
+            ]}
             renderItem={renderOptions}
           />
 

@@ -20,7 +20,7 @@ import {
 } from "react-icons/fi";
 
 // components
-import { Input, Select, Button, Badge } from '@Components';
+import { Input, Select, Button, Badge } from "@Components";
 import EditTodo from "../EditTodo";
 import DeleteTodo from "../DeleteTodo";
 
@@ -35,10 +35,8 @@ const INITIAL_SORT_PRIORITY: IPrioritySelect = {
 };
 
 function TodoList(): JSX.Element {
-  const { jobList } = useAppSelector(selectJobList);
-  const { priorityOptions } = useAppSelector(
-    selectPriorityOptions
-  );
+  const jobList = useAppSelector(selectJobList);
+  const priorityOptions = useAppSelector(selectPriorityOptions);
 
   const [sortPriority, setSortPriority] = useState<string | number>(
     INITIAL_SORT_PRIORITY.value
@@ -47,7 +45,9 @@ function TodoList(): JSX.Element {
 
   const [nameSortMode, setnameSortMode] = useState<boolean>(true);
   const [prioritySortMode, setprioritySortMode] = useState<boolean>(true);
-  const [lastSelected, setLastSelected] = useState<string>(SORT_MODE_TYPES.priority);
+  const [lastSelected, setLastSelected] = useState<string>(
+    SORT_MODE_TYPES.priority
+  );
 
   const [editJobObj, setEditJobObj] = useState<IJob>();
   const [deleteJobObj, setDeleteJobObj] = useState<IJob>();

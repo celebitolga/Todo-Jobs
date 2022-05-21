@@ -11,7 +11,7 @@ import { editJob } from "@Features/jobListSlice";
 import { selectPriorityOptions } from "@Features/priorityOptionsSlice";
 
 // Components
-import { Label, Input, Select, Button } from '@Components';
+import { Label, Input, Select, Button } from "@Components";
 
 interface Props {
   job: IJob;
@@ -20,13 +20,13 @@ interface Props {
 
 function EditTodo({ job, setJob }: Props): JSX.Element {
   const dispatch = useAppDispatch();
-  const { priorityOptions } = useAppSelector(
-    selectPriorityOptions
-  );
+  const priorityOptions = useAppSelector(selectPriorityOptions);
 
   const [editedJob, setEditedJob] = useState<IJob>({ ...job });
 
-  const handlePriorityOnChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+  const handlePriorityOnChange = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ): void => {
     setEditedJob({
       ...editedJob,
       priority: Number(e.target.value),
@@ -52,11 +52,14 @@ function EditTodo({ job, setJob }: Props): JSX.Element {
     }
   };
 
-  const handleKeyDown = useCallback( (e: React.KeyboardEvent<HTMLElement>): void => {
-    if (e.key === "Escape") {
-      setJob(undefined);
-    }
-  },[setJob]);
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLElement>): void => {
+      if (e.key === "Escape") {
+        setJob(undefined);
+      }
+    },
+    [setJob]
+  );
 
   const renderOptions = (options: Array<IPrioritySelect>): JSX.Element[] => {
     return options.map((option: IPrioritySelect) => (
