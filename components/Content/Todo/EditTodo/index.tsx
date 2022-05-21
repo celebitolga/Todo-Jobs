@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 
 // Slicer functions
 import { editJob } from "@Features/JobListSlice";
-import { selectPriorityOptions } from "@Features/PriorityOptionsSlice";
+import { usePriorityOptions } from "@Features/PriorityOptionsSlice";
 
 // Components
 import { Label, Input, Select, Button } from '@Components';
@@ -20,8 +20,8 @@ interface Props {
 
 function EditTodo({ job, setJob }: Props): JSX.Element {
   const dispatch = useAppDispatch();
-  const priorityOptions: IPrioritySelect[] = useAppSelector(
-    selectPriorityOptions
+  const { priorityOptions } = useAppSelector(
+    usePriorityOptions
   );
 
   const [editedJob, setEditedJob] = useState<IJob>({ ...job });

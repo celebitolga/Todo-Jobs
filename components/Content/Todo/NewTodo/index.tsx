@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 
 // Slicer functions
 import { createNewJob } from "@Features/JobListSlice";
-import { selectPriorityOptions } from "@Features/PriorityOptionsSlice";
+import { usePriorityOptions } from "@Features/PriorityOptionsSlice";
 
 // icons
 import { FiPlus } from "react-icons/fi";
@@ -21,8 +21,8 @@ import { Label, Input, Select, Button } from '@Components';
 
 function NewTodo(): JSX.Element {
   const dispatch = useAppDispatch();
-  const priorityOptions: Array<IPrioritySelect> = useAppSelector(
-    selectPriorityOptions
+  const { priorityOptions } = useAppSelector(
+    usePriorityOptions
   );
 
   const onSubmitNewTodo = ({ name, priority }: { name: string; priority: string | number; }): void => {

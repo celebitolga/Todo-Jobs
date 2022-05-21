@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../app/store";
 
 interface IPriorityOptions {
-  value: Array<IPrioritySelect>;
+  priorityOptions: Array<IPrioritySelect>;
 }
 
 const SLICE_NAME = "priorityOptions";
 
 const initialState: IPriorityOptions = {
-  value: [],
+  priorityOptions: [],
 };
 
 export const priorityOptionsSlice = createSlice({
@@ -16,14 +16,14 @@ export const priorityOptionsSlice = createSlice({
   initialState,
   reducers: {
     setPriorityOptions: (state, action: PayloadAction<Array<IPrioritySelect>>) => {
-      state.value = action.payload;
+      state.priorityOptions = action.payload;
     },
   },
 });
 
 export const { setPriorityOptions } = priorityOptionsSlice.actions;
 
-export const selectPriorityOptions = (state: RootState) =>
-  state[SLICE_NAME].value;
+export const usePriorityOptions = (state: RootState) =>
+  state[SLICE_NAME];
 
 export default priorityOptionsSlice.reducer;

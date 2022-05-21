@@ -5,7 +5,7 @@ import type { RootState } from "../app/store";
 import { getItemFromLS, saveItemToLS } from "@Utils";
 
 interface IJobListState {
-  value: Array<IJob>;
+  jobList: Array<IJob>;
 }
 
 const SLICE_NAME = "jobList";
@@ -13,7 +13,7 @@ const SLICE_NAME = "jobList";
 const INITIAL_JOB_LIST = getItemFromLS(SLICE_NAME);
 
 const initialState: IJobListState = {
-  value: INITIAL_JOB_LIST ? INITIAL_JOB_LIST : [],
+  jobList: INITIAL_JOB_LIST ? INITIAL_JOB_LIST : [],
 };
 
 export const jobListSlice = createSlice({
@@ -21,30 +21,30 @@ export const jobListSlice = createSlice({
   initialState,
   reducers: {
     createNewJob: (state, action: PayloadAction<IJob>) => {
-      state.value.push(action.payload);
+      state.jobList.push(action.payload);
 
-      saveItemToLS(SLICE_NAME, state.value);
+      saveItemToLS(SLICE_NAME, state.jobList);
     },
     editJob: (state, action: PayloadAction<IJob>) => {
-      const index = state.value.findIndex(
+      const index = state.jobList.findIndex(
         (job) => job.id === action.payload.id
       );
 
       if (index !== -1) {
-        state.value[index] = action.payload;
+        state.jobList[index] = action.payload;
 
-        saveItemToLS(SLICE_NAME, state.value);
+        saveItemToLS(SLICE_NAME, state.jobList);
       }
     },
     deleteJob: (state, action: PayloadAction<IJob>) => {
-      const index = state.value.findIndex(
+      const index = state.jobList.findIndex(
         (job) => job.id === action.payload.id
       );
 
       if (index !== -1) {
-        state.value.splice(index, 1);
+        state.jobList.splice(index, 1);
 
-        saveItemToLS(SLICE_NAME, state.value);
+        saveItemToLS(SLICE_NAME, state.jobList);
       }
     },
   },
@@ -52,6 +52,6 @@ export const jobListSlice = createSlice({
 
 export const { createNewJob, editJob, deleteJob } = jobListSlice.actions;
 
-export const selectJobList = (state: RootState) => state[SLICE_NAME].value;
+export const useJobList = (state: RootState) => state[SLICE_NAME];
 
 export default jobListSlice.reducer;
