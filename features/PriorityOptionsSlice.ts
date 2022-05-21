@@ -24,6 +24,6 @@ export const priorityOptionsSlice = createSlice({
 export const { setPriorityOptions } = priorityOptionsSlice.actions;
 
 export const selectPriorityOptions = (state: RootState) =>
-  state.priorityOptions.value;
+  state[SLICE_NAME].value;
 
 export default priorityOptionsSlice.reducer;

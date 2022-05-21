@@ -52,6 +52,6 @@ export const jobListSlice = createSlice({
 
 export const { createNewJob, editJob, deleteJob } = jobListSlice.actions;
 
-export const selectJobList = (state: RootState) => state.jobList.value;
+export const selectJobList = (state: RootState) => state[SLICE_NAME].value;
 
 export default jobListSlice.reducer;
